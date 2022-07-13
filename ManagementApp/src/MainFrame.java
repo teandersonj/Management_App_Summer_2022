@@ -66,7 +66,8 @@ public class MainFrame extends JFrame implements ActionListener{
 
 		if(e.getSource() == newItem) {
 
-			System.out.println("Project Created");
+			new_project_menu about = new new_project_menu();
+			about.setVisible(true);
 
 		}
 		
