@@ -15,16 +15,17 @@ import java.awt.Button;
 
 public class Start extends JFrame implements ActionListener {
 	
-	JPanel contentPane;
-	JTextField textField;
-	JPasswordField passwordField;
-	JLabel lblNewLabel;
-	JLabel lblNewLabel_1;
-	JLabel lblNewLabel_2;
-	Button button;
+	private JPanel contentPane;
+	private JTextField textField;
+	private JPasswordField passwordField;
+	private JLabel lblNewLabel;
+	private JLabel lblNewLabel_1;
+	private JLabel lblNewLabel_2;
+	private Button button;
 	
 	Start() {
 		
+		//Frame Settings
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(500,500);
 		this.setLayout(new FlowLayout());
@@ -33,12 +34,14 @@ public class Start extends JFrame implements ActionListener {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		//Lable
 		lblNewLabel = new JLabel("ProjiTrak");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Segoe UI", Font.BOLD, 24));
 		lblNewLabel.setBounds(41, 30, 344, 71);
 		contentPane.add(lblNewLabel);
 		
+		//Log In
 		lblNewLabel_1 = new JLabel("Username :");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel_1.setBounds(116, 112, 74, 24);
@@ -58,6 +61,7 @@ public class Start extends JFrame implements ActionListener {
 		passwordField.setBounds(200, 143, 111, 20);
 		contentPane.add(passwordField);
 		
+		//Submit Button
 		button = new Button("Submit");
 		button.setBounds(171, 184, 70, 22);
 		button.addActionListener(this);
