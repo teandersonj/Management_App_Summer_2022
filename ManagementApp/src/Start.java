@@ -18,15 +18,13 @@ public class Start extends JFrame implements ActionListener {
 	JPanel contentPane;
 	JTextField textField;
 	JPasswordField passwordField;
+	JLabel lblNewLabel;
 	JLabel lblNewLabel_1;
 	JLabel lblNewLabel_2;
 	Button button;
 	
 	Start() {
 		
-		
-//		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		this.setBounds(100, 100, 450, 300);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(500,500);
 		this.setLayout(new FlowLayout());
@@ -35,13 +33,13 @@ public class Start extends JFrame implements ActionListener {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("ProjiTrak");
+		lblNewLabel = new JLabel("ProjiTrak");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Segoe UI", Font.BOLD, 24));
 		lblNewLabel.setBounds(41, 30, 344, 71);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Username :");
+		lblNewLabel_1 = new JLabel("Username :");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel_1.setBounds(116, 112, 74, 24);
 		contentPane.add(lblNewLabel_1);
@@ -51,7 +49,7 @@ public class Start extends JFrame implements ActionListener {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("Password :");
+		lblNewLabel_2 = new JLabel("Password :");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel_2.setBounds(116, 147, 74, 14);
 		contentPane.add(lblNewLabel_2);
@@ -60,29 +58,24 @@ public class Start extends JFrame implements ActionListener {
 		passwordField.setBounds(200, 143, 111, 20);
 		contentPane.add(passwordField);
 		
-		Button button = new Button("Submit");
+		button = new Button("Submit");
 		button.setBounds(171, 184, 70, 22);
-		button.addActionListener(e -> new MainFrame());
+		button.addActionListener(this);
 		contentPane.add(button);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		String user = textField.getText();
+		String password = passwordField.getText();
+		System.out.println(user + ", " + password);
 		
+		if(user.equals("admin") && password.equals("admin")) {
+			dispose();
+			new MainFrame();
+		} else {
+			new Start();
+		}
+		}
 	}
-
-//	@Override
-//	public void actionPerformed(ActionEvent e) {
-//		if(e.getSource() == button) {
-//			new MainFrame();
-//		}
-//		
-//	}
-	
-	
-}
-	
-		
-	
-
