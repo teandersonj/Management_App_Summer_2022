@@ -39,7 +39,7 @@ public class new_project_menu extends JFrame implements ActionListener {
 		aboutButton.addActionListener(this);
 		
 		
-		prj_req_bttn = new JButton("Project Reuirements");
+		prj_req_bttn = new JButton("Project Requirements");
 		prj_req_bttn.setFont(new Font("Segoe UI", Font.BOLD, 24));
 		prj_req_bttn.setBounds(39, 216, 383, 59);
 		contentPane.add(prj_req_bttn);
